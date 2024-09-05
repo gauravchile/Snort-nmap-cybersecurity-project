@@ -1,0 +1,49 @@
+# Copyright 2001-2024 Sourcefire, Inc. All Rights Reserved.
+#
+# This file contains (i) proprietary rules that were created, tested and certified by
+# Sourcefire, Inc. (the "VRT Certified Rules") that are distributed under the VRT
+# Certified Rules License Agreement (v 2.0), and (ii) rules that were created by
+# Sourcefire and other third parties (the "GPL Rules") that are distributed under the
+# GNU General Public License (GPL), v2.
+# 
+# The VRT Certified Rules are owned by Sourcefire, Inc. The GPL Rules were created
+# by Sourcefire and other third parties. The GPL Rules created by Sourcefire are
+# owned by Sourcefire, Inc., and the GPL Rules not created by Sourcefire are owned by
+# their respective creators. Please see http://www.snort.org/snort/snort-team/ for a
+# list of third party owners and their respective copyrights.
+# 
+# In order to determine what rules are VRT Certified Rules or GPL Rules, please refer
+# to the VRT Certified Rules License Agreement (v2.0).
+#
+#-------------
+# LOCAL RULES
+#-------------
+alert icmp any any -> $HOME_NET any (msg:"ICMP Ping detected"; sid:1000001; rev:1;)
+
+#Nmap Scan
+alert icmp any any -> 192.168.64.4 any (msg: "NMAP ping sweep Scan"; dsize:0;sid:10000004; rev: 1;)
+
+#TCP SYN Scan (nmap -sS)
+#alert tcp any any -> any any (msg:"Possible SYN scan detected"; flags:S; threshold:type threshold, track by_src, count 10, seconds 10; sid:1000003; )
+
+#Service Version Detection (nmap -sV)
+#alert tcp any any -> any any (msg:"Possible service version detection"; flow:to_server,established; content:"Server:"; sid:1000004; )
+
+#OS Detection (nmap -O)
+#alert ip any any -> any any (msg:"Possible OS detection scan"; detection_filter:track by_src, count 5, seconds 60; sid:1000005; )
+
+#Brute-Force attack
+alert tcp $HOME_NET any -> any 22 (msg:"SSH Brute-Force attack"; threshold:type both, track by_src, count 2000, seconds 30; classtype:trojan-activity; sid:1000281; rev:2;)
+
+# DDoS Attack Types
+# SYN Flood Attack
+alert tcp $EXTERNAL_NET any -> $HOME_NET 80 (msg:"SYN Flood Attack"; flags:S; threshold: type both, track by_src, count 100, seconds 10; sid:1000001; classtype: attempted-dos; )
+
+#UDP Flood Attack
+alert udp $EXTERNAL_NET any -> $HOME_NET any (msg:"UDP Flood Attack"; threshold: type both, track by_src, count 1000, seconds 10; sid:1000002; classtype: attempted-dos; )
+
+#ICMP Flood Attack
+alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"ICMP Flood Attack"; threshold: type both, track by_src, count 1000, seconds 10; sid:1000003; classtype: attempted-dos; )
+
+#HTTP Flood Attack
+alert tcp $EXTERNAL_NET any -> $HOME_NET 80 (msg:"HTTP Flood Attack"; flags:PA; threshold: type both, track by_src, count 500, seconds 10; sid:1000004; classtype: attempted-dos; )

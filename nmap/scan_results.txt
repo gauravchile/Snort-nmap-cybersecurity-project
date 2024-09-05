@@ -1,0 +1,51 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2024-09-05 09:28 +03
+Nmap scan report for 192.168.64.4
+Host is up (0.00080s latency).
+MAC Address: 82:46:BF:14:3A:34 (Unknown)
+Nmap done: 1 IP address (1 host up) scanned in 0.16 seconds
+Starting Nmap 7.95 ( https://nmap.org ) at 2024-09-05 09:31 +03
+Nmap scan report for 192.168.64.4
+Host is up (0.0019s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+MAC Address: 82:46:BF:14:3A:34 (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.52 seconds
+Starting Nmap 7.95 ( https://nmap.org ) at 2024-09-05 09:31 +03
+Nmap scan report for 192.168.64.4
+Host is up (0.0045s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.7p1 Debian 5 (protocol 2.0)
+MAC Address: 82:46:BF:14:3A:34 (Unknown)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.91 seconds
+Starting Nmap 7.95 ( https://nmap.org ) at 2024-09-05 09:31 +03
+Nmap scan report for 192.168.64.4
+Host is up (0.0011s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+MAC Address: 82:46:BF:14:3A:34 (Unknown)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=9/5%OT=22%CT=1%CU=44621%PV=Y%DS=1%DC=D%G=Y%M=8246BF%TM
+OS:=66D95068%P=x86_64-apple-darwin21.6.0)SEQ(SP=101%GCD=1%ISR=109%TI=Z%CI=Z
+OS:%II=I%TS=A)SEQ(SP=101%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=102%GCD=1
+OS:%ISR=107%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=104%GCD=1%ISR=10C%TI=Z%CI=Z%II=I%TS=
+OS:A)SEQ(SP=FD%GCD=1%ISR=101%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M5B4ST11NW7%O2=M5B4
+OS:ST11NW7%O3=M5B4NNT11NW7%O4=M5B4ST11NW7%O5=M5B4ST11NW7%O6=M5B4ST11)WIN(W1
+OS:=7C70%W2=7C70%W3=7C70%W4=7C70%W5=7C70%W6=7C70)ECN(R=Y%DF=Y%T=40%W=7D78%O
+OS:=M5B4NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N
+OS:)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=
+OS:S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=N)U1
+OS:(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI
+OS:=N%T=40%CD=S)
+
+Network Distance: 1 hop
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.32 seconds
